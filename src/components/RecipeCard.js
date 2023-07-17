@@ -8,7 +8,7 @@ export const RecipeCard = ({
         <img src={image} alt={name} width="240"></img>
         <h2>{name}</h2>
 
-        <div style={{display: "flex", gap: 0}}>
+        <div style={{display: "flex", gap: 8}}>
             <div>
                 <span>Icon</span>
                 <p>{time} min</p>
