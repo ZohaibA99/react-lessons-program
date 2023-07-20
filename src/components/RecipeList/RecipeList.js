@@ -1,14 +1,14 @@
 import { RecipeCard } from "../RecipeCard/RecipeCard";
 import PropTypes from "prop-types";
-import {List} from './RecipeList.styled';
+import {List, ListeItem} from './RecipeList.styled';
 
-export const RecipeList = ({items}) => {
+export const RecipeList = ({items, onDelete, onSelect}) => {
     return (
         <List>
             {items.map(item => (
-                <li>
-                    <RecipeCard item={item}/>
-                </li>
+                <ListeItem>
+                    <RecipeCard item={item} onDelete={onDelete}></RecipeCard>
+                </ListeItem>
             ))}
         </List>
     );
