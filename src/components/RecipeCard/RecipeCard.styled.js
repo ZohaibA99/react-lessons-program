@@ -1,100 +1,89 @@
-import {RecipeDifficulty} from "constants";
-import styled from "styled-components";
+import { RecipeDifficulty } from 'constants';
+import styled from 'styled-components';
 
 export const Container = styled.section`
-positon: relative;
-border: 1px solid black;
-display: flex;
-flex-direction: column;
-height: 100%;
-border-radius: 4px;
-overflow: hidden;
+  position: relative;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 4px;
+  overflow: hidden;
 `;
 
 export const Name = styled.h2`
-margin-top: 8px;
-margin-bottom: 12px;
-
-:hover{
-    color: orange;
-}
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 20px;
 `;
 
 export const Image = styled.img`
-    display: block;
-    width: 100%;
-    height: 120px;
-    object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
 `;
 
 export const Meta = styled.div`
-    display: flex;
-    flex-direction: column;
-    padding: 11px;
-    flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  flex-grow: 1;
 `;
 
 export const RecipeInfo = styled.div`
-display: flex;
-gap: 4px
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  flex-grow: 1;
 `;
 
-export const InfoBlock = styled.p`
-    display: flex;
-    align-items: center;
-    gap: 4px;
+export const InfoBlock = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 500;
 `;
 
 export const BadgeList = styled.div`
-    display: flex;
-    gap: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
 `;
 
 export const Badge = styled.span`
-    padding: 8px 12px;
-    border-radius: ${p => p.theme.radii.sm};
-    border: 1px solid ${p => p.theme.colors.balck};
+  padding: 8px 12px;
+  border-radius: ${p => p.theme.radii.sm};
+  border: 1px solid ${p => p.theme.colors.black};
 
-    background-color: ${({active, type, theme}) => {
-        if (!active) {
-            return theme.colors.white;
-        }
+  background-color: ${({ active, type, theme }) => {
+    if (!active) {
+      return theme.colors.white;
+    }
 
-        switch(type) {
-            case RecipeDifficulty.easy:
-                return "green";
-            case RecipeDifficulty.medium:
-                return "orange";
-            case RecipeDifficulty.hard:
-                return 'red';
-            default: 
-                throw new Error(`Unknown badge type ${type}`)
-        }
-    }};
+    switch (type) {
+      case RecipeDifficulty.easy:
+        return 'green';
+      case RecipeDifficulty.medium:
+        return 'orange';
+      case RecipeDifficulty.hard:
+        return 'red';
+      default:
+        throw new Error(`Unknown badge type ${type}`);
+    }
+  }};
 
-    color: ${p => {
-        return p.active ? p.theme.colors.white : p.theme.colors.black;
-    }}
+  color: ${p => {
+    return p.active ? p.theme.colors.white : p.theme.colors.black;
+  }};
 `;
 
 export const Actions = styled.div`
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    display: flex;
-    gap: 4px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 4px;
 `;
-
-// export const Badge = styled.span`
-//   padding: 8px 12px;
-//   border-radius: ${p => p.theme.radii.sm};
-//   border: 1px solid ${p => p.theme.colors.black};
-
-//   background-color: ${p => {
-//     return p.active ? p.theme.colors.accent : p.theme.colors.white;
-//   }};
-
-//   color: ${p => {
-//     return p.active ? p.theme.colors.white : p.theme.colors.black;
-//   }};
-// `;
