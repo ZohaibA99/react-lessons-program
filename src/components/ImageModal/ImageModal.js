@@ -11,7 +11,7 @@ const customStyles = {
     }
 }
 
-Modal.setAppElement("#root")
+Modal.setAppElement("#root");
 
 export const ImageModal = ({ isOpen, image, onClose}) => {
     return (
